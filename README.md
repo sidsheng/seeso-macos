@@ -7,7 +7,7 @@
 <div align="center">
     <h1>SeeSo MacOS Sample(C++)</h1>
     <a href="https://github.com/visualcamp/seeso-sample-macos/releases" alt="release">
-        <img src="https://img.shields.io/badge/version-4.0.0_beta-blue" />
+        <img src="https://img.shields.io/badge/version-4.1.0_beta-blue" />
     </a>
 </div>
 
