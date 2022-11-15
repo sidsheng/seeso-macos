@@ -19,6 +19,8 @@ static std::vector<float> getWindowRectWithPadding(const char* window_name, int 
 
 void TrackerManager::OnGaze(uint64_t timestamp,
                             float x, float y,
+                            float fixation_x, float fixation_y,
+                            float left_openness, float right_openness,
                             SeeSoTrackingState tracking_state,
                             SeeSoEyeMovementState eye_movement_state) {
   if (tracking_state != kSeeSoTrackingSuccess) {
@@ -40,9 +42,9 @@ void TrackerManager::OnAttention(uint64_t timestampBegin, uint64_t timestampEnd,
   std::cout << "Attention: " << timestampBegin << " " << timestampEnd << " " << score << '\n';
 }
 
-void TrackerManager::OnBlink(uint64_t timestamp, bool isBlinkLeft, bool isBlinkRight, bool isBlink, float eyeOpenness) {
+void TrackerManager::OnBlink(uint64_t timestamp, bool isBlinkLeft, bool isBlinkRight, bool isBlink, float leftOpenness, float rightOpenness) {
 //  std::cout << "Blink: " << isBlink << ", " << isBlinkLeft << ", " << isBlinkRight << '\n'
-//            << "EyeOpenness: " << eyeOpenness << '\n';
+//            << "LeftOpenness: " << leftOpenness << ", rightOpenness: " << rightOpenness << '\n';
 }
 
 void TrackerManager::OnDrowsiness(uint64_t timestamp, bool isDrowsiness) {

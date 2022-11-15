@@ -43,10 +43,11 @@ class TrackerManager :
   std::string window_name_;
 
  private:
-  void OnGaze(uint64_t timestamp, float x, float y,
+  void OnGaze(uint64_t timestamp, float x, float y, float fixation_x, float fixation_y,
+              float left_openness, float right_openness,
               SeeSoTrackingState tracking_state, SeeSoEyeMovementState eye_movement_state) override;
   void OnAttention(uint64_t timestampBegin, uint64_t timestampEnd, float score) override;
-  void OnBlink(uint64_t timestamp, bool isBlinkLeft, bool isBlinkRight, bool isBlink, float eyeOpenness) override;
+  void OnBlink(uint64_t timestamp, bool isBlinkLeft, bool isBlinkRight, bool isBlink, float leftOpenness, float rightOpenness) override;
   void OnDrowsiness(uint64_t timestamp, bool isDrowsiness) override;
 
   void OnCalibrationProgress(float progress) override;
